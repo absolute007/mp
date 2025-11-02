@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <a id="dl" href="prac.asm" download></a>
-    <script>
-      document.getElementById('dl').click();
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download</title>
+  <script>
+    function triggerDownload(url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    window.onload = function() {
+      triggerDownload("prac.asm");
+    };
+  </script>
+</head>
+<body>
+</body>
 </html>
